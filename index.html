@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpisahan Angkatan 2026 - SMKN 2 KOTA KOMBA</title>
+    <title>Perpisahan - TKJ Angkatan 2026 | SMKN 2 KOTA KOMBA</title>
     <style>
         * {
             margin: 0;
@@ -12,169 +12,244 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f5f7fb;
+            color: #1a1a2e;
+            line-height: 1.5;
         }
 
-        header {
-            background: rgba(0, 0, 0, 0.7);
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(120deg, #0f172a 0%, #1e293b 100%);
             color: white;
             text-align: center;
-            padding: 80px 20px;
+            padding: 5rem 2rem;
+            position: relative;
         }
 
-        header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>') repeat-x bottom;
+            background-size: cover;
+            opacity: 0.3;
         }
 
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 50px 30px;
-            background: #ffffff;
-            border-radius: 30px 30px 0 0;
-        }
-
-        section {
-            margin-bottom: 60px;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: #2c3e50;
-            border-left: 5px solid #e67e22;
-            padding-left: 18px;
+        .hero h1 {
+            font-size: 3rem;
             font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            position: relative;
         }
 
-        .intro-text {
+        .hero .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(4px);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            position: relative;
+        }
+
+        .hero .subtitle {
             font-size: 1.1rem;
-            color: #555;
+            opacity: 0.85;
+            margin-top: 1rem;
+            position: relative;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #0f172a;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid #e2e8f0;
+        }
+
+        .section-title span {
+            color: #3b82f6;
+        }
+
+        /* Intro Text */
+        .intro-text {
+            font-size: 1.05rem;
+            color: #334155;
             text-align: justify;
         }
 
         .intro-text p {
-            margin-bottom: 15px;
+            margin-bottom: 1.25rem;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
+        /* Foto Section - Elegant */
+        .photo-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
         }
 
-        .card {
-            background: #f8f9fa;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card img {
+        .photo-card {
+            max-width: 500px;
             width: 100%;
-            height: 260px;
-            object-fit: cover;
-        }
-
-        .card p {
-            padding: 15px;
-            font-weight: 500;
-            color: #2c3e50;
             background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
+        .photo-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 40px -14px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .photo-caption {
+            padding: 1rem;
+            text-align: center;
+            background: white;
+            font-size: 0.85rem;
+            color: #475569;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        /* Message Card */
         .message-card {
-            background: #fef9f0;
-            padding: 30px;
-            border-radius: 12px;
-            border-left: 5px solid #e67e22;
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 20px;
+            border-left: 5px solid #3b82f6;
             text-align: center;
             font-style: italic;
             font-size: 1.1rem;
-            color: #444;
+            color: #1e293b;
         }
 
         .message-author {
-            margin-top: 20px;
+            margin-top: 1rem;
             font-style: normal;
             font-weight: 600;
-            color: #e67e22;
+            color: #3b82f6;
         }
 
+        /* Jurusan Highlight */
+        .jurusan-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #eef2ff;
+            padding: 0.5rem 1.2rem;
+            border-radius: 60px;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #1e40af;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            padding: 25px;
-            background: #2c3e50;
-            color: #ecf0f1;
-            font-size: 0.9rem;
+            padding: 2rem;
+            background: #0f172a;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            border-top: 1px solid #1e293b;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            .container { padding: 30px 20px; }
-            h2 { font-size: 1.5rem; }
-            .gallery-grid { grid-template-columns: 1fr; }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 2rem 1.5rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .intro-text {
+                font-size: 1rem;
+            }
+            .message-card {
+                font-size: 1rem;
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<header>
+<div class="hero">
     <h1>SMKN 2 KOTA KOMBA</h1>
-    <p class="subtitle">Angkatan 2026 — Kenangan yang Tak Terlupakan</p>
-</header>
+    <div class="badge">Angkatan 2026</div>
+    <div class="subtitle">Kenangan yang Tak Terlupakan</div>
+</div>
 
 <div class="container">
-    <section>
-        <h2>Selamat Jalan, Teman Seperjuangan</h2>
+    <!-- Intro Section -->
+    <div class="section">
+        <h2 class="section-title">Selamat Jalan, <span>Teman Seperjuangan</span></h2>
         <div class="intro-text">
-            <p>Tiga tahun bukan waktu yang singkat. Kita telah melewati suka, duka, tawa, dan air mata bersama. Halaman ini dibuat sebagai kenangan digital untuk kita semua, angkatan 2026.</p>
+            <p>Tiga tahun bukan waktu yang singkat. Kita telah melewati suka, duka, tawa, dan air mata bersama. Halaman ini dibuat sebagai kenangan digital untuk kita semua, Angkatan 2026.</p>
             <p>Terima kasih untuk setiap cerita, pelajaran, dan senyuman yang telah kita bagi. Kalian luar biasa.</p>
-        </div>
-    </section>
-
-    <section>
-        <h2>Galeri Kenangan</h2>
-        <div class="gallery-grid">
-            <div class="card">
-                <img src="https://iili.io/BwnEhjp.jpg" alt="Foto Angkatan SMKN 2 Kota Komba">
-                <p>Foto Angkatan SMKN 2 Kota Komba</p>
-            </div>
-            <div class="card">
-                <img src="https://iili.io/BwnEhjp.jpg" alt="Foto Kenangan Angkatan">
-                <p>Momen Kebersamaan Angkatan</p>
+            <div class="jurusan-badge">
+                <span>💻</span> Teknik Komputer dan Jaringan (TKJ)
             </div>
         </div>
-    </section>
+    </div>
 
-    <section>
-        <h2>Pesan dan Kesan</h2>
+    <!-- Foto Kenangan Section -->
+    <div class="section">
+        <h2 class="section-title">Satu Kenangan, <span>Sejuta Cerita</span></h2>
+        <div class="photo-container">
+            <div class="photo-card">
+                <img src="https://thumbs4.imagebam.com/43/eb/aa/ME1C66PG_t.jpg" alt="Kenangan Angkatan 2026 SMKN 2 Kota Komba - TKJ">
+                <div class="photo-caption">
+                    Kebersamaan kami, Keluarga Besar TKJ 2026
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pesan & Kesan Section -->
+    <div class="section">
+        <h2 class="section-title">Pesan & <span>Kesan</span></h2>
         <div class="message-card">
-            "Terima kasih untuk semua kenangan indah. Sukses untuk kita semua di masa depan."
-            <div class="message-author">— Perwakilan Angkatan 2026</div>
+            "Terima kasih untuk semua kenangan indah. Sukses untuk kita semua di masa depan, dimanapun kalian berada."
+            <div class="message-author">— Perwakilan Angkatan 2026, TKJ</div>
         </div>
-    </section>
+    </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 — SMKN 2 KOTA KOMBA | Angkatan 2026</p>
+    <p>© 2026 — SMKN 2 KOTA KOMBA | Teknik Komputer dan Jaringan (TKJ) | Angkatan 2026</p>
 </footer>
 
 </body>
