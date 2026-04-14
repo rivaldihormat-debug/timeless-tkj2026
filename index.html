@@ -54,6 +54,7 @@
             font-weight: 500;
             transition: 0.2s;
             font-size: 0.95rem;
+            cursor: pointer;
         }
 
         .navbar a:hover {
@@ -108,6 +109,9 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
         }
 
         .btn-primary {
@@ -156,6 +160,20 @@
             padding: 1rem;
             text-align: center;
             font-weight: 500;
+        }
+
+        
+        .pesan-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .pesan-section.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .pesan-grid {
@@ -231,6 +249,7 @@
             opacity: 0;
             transition: 0.2s;
             z-index: 99;
+            cursor: pointer;
         }
 
         .back-to-top.show {
@@ -247,19 +266,18 @@
 <div class="bg-wrapper">
     <div class="overlay">
         <div class="navbar">
-            <a href="#home">Beranda</a>
-            <a href="#galeri">Galeri</a>
-            <a href="#pesan">Pesan Teman</a>
+            <a onclick="scrollToHome()">Beranda</a>
+            <a onclick="showPesanAndScroll()">Pesan</a>
         </div>
 
         <div class="container" id="home">
+            
             <div class="hero">
                 <h1>SMKN 2 KOTA KOMBA</h1>
                 <div class="badge">TKJ Angkatan 2026 — Timeless</div>
                 <p style="max-width: 600px; margin: 1rem auto;">Tiga tahun perjalanan, ribuan kenangan. Terima kasih untuk setiap cerita yang terukir.</p>
                 <div class="btn-group">
-                    <a href="#galeri" class="btn btn-primary"><i class="fas fa-images"></i> Lihat Galeri</a>
-                    <a href="#pesan" class="btn btn-primary"><i class="fas fa-comment-dots"></i> Lihat Pesan</a>
+                    <button onclick="showPesanAndScroll()" class="btn btn-primary"><i class="fas fa-comment-dots"></i> Lihat Pesan</button>
                 </div>
             </div>
 
@@ -275,7 +293,7 @@
             </div>
 
             
-            <div class="section" id="pesan">
+            <div class="pesan-section" id="pesanSection">
                 <div class="section-title"><i class="fas fa-users"></i> Pesan & Kesan</div>
                 <div class="counter"><i class="fas fa-envelope"></i> 11 pesan dari keluarga besar TKJ 2026</div>
                 <div class="pesan-grid">
@@ -301,12 +319,42 @@
             <p style="margin-top: 0.5rem; font-size: 0.7rem;">Dibuat oleh Rivaldi — Kreator website angkatan</p>
         </footer>
 
-        <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+        <div class="back-to-top" id="backToTop" onclick="scrollToTop()">
+            <i class="fas fa-arrow-up"></i>
+        </div>
     </div>
 </div>
 
 <script>
+    const pesanSection = document.getElementById('pesanSection');
     const backBtn = document.getElementById('backToTop');
+
+    
+    function showPesan() {
+        if (!pesanSection.classList.contains('show')) {
+            pesanSection.classList.add('show');
+        }
+    }
+
+    
+    function showPesanAndScroll() {
+        showPesan();
+        setTimeout(() => {
+            pesanSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+    }
+
+    
+    function scrollToHome() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
             backBtn.classList.add('show');
