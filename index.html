@@ -12,98 +12,91 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: #f5f7fb;
-            color: #1a1a2e;
-            line-height: 1.5;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(120deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            text-align: center;
-            padding: 5rem 2rem;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>') repeat-x bottom;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://i.ibb.co.com/WvmZmkgj/View-Inside-Large-Server-Room-Wall-Mural.jpg');
             background-size: cover;
-            opacity: 0.3;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            line-height: 1.6;
         }
 
-        .hero h1 {
+        /* Overlay gelap agar teks terbaca */
+        .overlay {
+            background: rgba(0, 0, 0, 0.7);
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
             font-size: 3rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
-            position: relative;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
         }
 
-        .hero .badge {
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .badge {
             display: inline-block;
             background: rgba(255,255,255,0.15);
             backdrop-filter: blur(4px);
             padding: 0.3rem 1rem;
             border-radius: 40px;
             font-size: 0.85rem;
-            font-weight: 500;
             margin-top: 1rem;
-            position: relative;
         }
 
-        .hero .subtitle {
-            font-size: 1.1rem;
-            opacity: 0.85;
-            margin-top: 1rem;
-            position: relative;
-        }
-
-        /* Container */
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 50px 30px;
         }
 
-        /* Section */
-        .section {
-            margin-bottom: 4rem;
+        section {
+            margin-bottom: 60px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            border-radius: 20px;
+            padding: 30px;
         }
 
-        .section-title {
-            font-size: 1.75rem;
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            border-left: 5px solid #3b82f6;
+            padding-left: 18px;
             font-weight: 600;
-            letter-spacing: -0.01em;
-            color: #0f172a;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 3px solid #e2e8f0;
         }
 
-        .section-title span {
-            color: #3b82f6;
-        }
-
-        /* Intro Text */
         .intro-text {
-            font-size: 1.05rem;
-            color: #334155;
+            font-size: 1.1rem;
             text-align: justify;
         }
 
         .intro-text p {
-            margin-bottom: 1.25rem;
+            margin-bottom: 15px;
         }
 
-        /* Foto Section - Elegant */
+        .jurusan-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #1e293b;
+            padding: 0.5rem 1.2rem;
+            border-radius: 60px;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
         .photo-container {
             display: flex;
             justify-content: center;
@@ -111,18 +104,12 @@
         }
 
         .photo-card {
-            max-width: 500px;
+            max-width: 400px;
             width: 100%;
             background: white;
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .photo-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 25px 40px -14px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.3);
         }
 
         .photo-card img {
@@ -135,21 +122,18 @@
             padding: 1rem;
             text-align: center;
             background: white;
+            color: #333;
             font-size: 0.85rem;
-            color: #475569;
-            border-top: 1px solid #f1f5f9;
         }
 
-        /* Message Card */
         .message-card {
-            background: #f8fafc;
+            background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
             border-radius: 20px;
             border-left: 5px solid #3b82f6;
             text-align: center;
             font-style: italic;
             font-size: 1.1rem;
-            color: #1e293b;
         }
 
         .message-author {
@@ -159,98 +143,65 @@
             color: #3b82f6;
         }
 
-        /* Jurusan Highlight */
-        .jurusan-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: #eef2ff;
-            padding: 0.5rem 1.2rem;
-            border-radius: 60px;
-            margin-top: 1rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #1e40af;
-        }
-
-        /* Footer */
         footer {
             text-align: center;
-            padding: 2rem;
-            background: #0f172a;
-            color: #94a3b8;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.8);
             font-size: 0.85rem;
-            border-top: 1px solid #1e293b;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .container {
-                padding: 2rem 1.5rem;
-            }
-            .section-title {
-                font-size: 1.5rem;
-            }
-            .intro-text {
-                font-size: 1rem;
-            }
-            .message-card {
-                font-size: 1rem;
-                padding: 1.5rem;
-            }
+            header h1 { font-size: 2rem; }
+            .container { padding: 30px 20px; }
+            section { padding: 20px; }
+            h2 { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
+<div class="overlay">
+    <header>
+        <h1>SMKN 2 KOTA KOMBA</h1>
+        <div class="badge">Angkatan 2026</div>
+        <div class="subtitle">Kenangan yang Tak Terlupakan</div>
+    </header>
 
-<div class="hero">
-    <h1>SMKN 2 KOTA KOMBA</h1>
-    <div class="badge">Angkatan 2026</div>
-    <div class="subtitle">Kenangan yang Tak Terlupakan</div>
-</div>
-
-<div class="container">
-    <!-- Intro Section -->
-    <div class="section">
-        <h2 class="section-title">Selamat Jalan, <span>Teman Seperjuangan</span></h2>
-        <div class="intro-text">
-            <p>Tiga tahun bukan waktu yang singkat. Kita telah melewati suka, duka, tawa, dan air mata bersama. Halaman ini dibuat sebagai kenangan digital untuk kita semua, Angkatan 2026.</p>
-            <p>Terima kasih untuk setiap cerita, pelajaran, dan senyuman yang telah kita bagi. Kalian luar biasa.</p>
-            <div class="jurusan-badge">
-                <span>💻</span> Teknik Komputer dan Jaringan (TKJ)
-            </div>
-        </div>
-    </div>
-
-    <!-- Foto Kenangan Section -->
-    <div class="section">
-        <h2 class="section-title">Satu Kenangan, <span>Sejuta Cerita</span></h2>
-        <div class="photo-container">
-            <div class="photo-card">
-                <img src="https://thumbs4.imagebam.com/43/eb/aa/ME1C66PG_t.jpg" alt="Kenangan Angkatan 2026 SMKN 2 Kota Komba - TKJ">
-                <div class="photo-caption">
-                    Kebersamaan kami, Keluarga Besar TKJ 2026
+    <div class="container">
+        <section>
+            <h2>Selamat Jalan, Teman Seperjuangan</h2>
+            <div class="intro-text">
+                <p>Tiga tahun bukan waktu yang singkat. Kita telah melewati suka, duka, tawa, dan air mata bersama. Halaman ini dibuat sebagai kenangan digital untuk kita semua, Angkatan 2026.</p>
+                <p>Terima kasih untuk setiap cerita, pelajaran, dan senyuman yang telah kita bagi. Kalian luar biasa.</p>
+                <div class="jurusan-badge">
+                    💻 Teknik Komputer dan Jaringan (TKJ)
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section>
+            <h2>Satu Kenangan, Sejuta Cerita</h2>
+            <div class="photo-container">
+                <div class="photo-card">
+                    <img src="https://thumbs4.imagebam.com/43/eb/aa/ME1C66PG_t.jpg" alt="Kenangan Angkatan 2026">
+                    <div class="photo-caption">
+                        Kebersamaan kami, Keluarga Besar TKJ 2026
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Pesan & Kesan</h2>
+            <div class="message-card">
+                "Terima kasih untuk semua kenangan indah. Sukses untuk kita semua di masa depan, dimanapun kalian berada."
+                <div class="message-author">— Perwakilan Angkatan 2026, TKJ</div>
+            </div>
+        </section>
     </div>
 
-    <!-- Pesan & Kesan Section -->
-    <div class="section">
-        <h2 class="section-title">Pesan & <span>Kesan</span></h2>
-        <div class="message-card">
-            "Terima kasih untuk semua kenangan indah. Sukses untuk kita semua di masa depan, dimanapun kalian berada."
-            <div class="message-author">— Perwakilan Angkatan 2026, TKJ</div>
-        </div>
-    </div>
+    <footer>
+        <p>© 2026 — SMKN 2 KOTA KOMBA | Teknik Komputer dan Jaringan (TKJ) | Angkatan 2026</p>
+    </footer>
 </div>
-
-<footer>
-    <p>© 2026 — SMKN 2 KOTA KOMBA | Teknik Komputer dan Jaringan (TKJ) | Angkatan 2026</p>
-</footer>
-
 </body>
 </html>
