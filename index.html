@@ -4,357 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Timeless - TKJ 2026 | SMKN 2 KOTA KOMBA</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #0f172a;
-            color: #f1f5f9;
-            line-height: 1.5;
-            scroll-behavior: smooth;
-        }
-
-        .bg-wrapper {
-            background-image: url('https://i.ibb.co.com/WvmZmkgj/View-Inside-Large-Server-Room-Wall-Mural.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        .overlay {
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(2px);
-        }
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            flex-wrap: wrap;
-        }
-
-        .navbar a {
-            color: #f1f5f9;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.2s;
-            font-size: 0.95rem;
-            cursor: pointer;
-        }
-
-        .navbar a:hover {
-            color: #3b82f6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 4rem 1rem 3rem;
-        }
-
-        .hero h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #ffffff, #94a3b8);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero .badge {
-            display: inline-block;
-            background: rgba(59,130,246,0.2);
-            padding: 0.3rem 1rem;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            margin: 1rem 0;
-            border: 1px solid rgba(59,130,246,0.5);
-        }
-
-        .btn-group {
-            margin-top: 1.5rem;
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.7rem 1.5rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: #3b82f6;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #2563eb;
-            transform: translateY(-2px);
-        }
-
-        .section {
-            margin: 3rem 0;
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            border-left: 5px solid #3b82f6;
-            padding-left: 1rem;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(8px);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: transform 0.2s;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.1);
-        }
-
-        .card img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .card p {
-            padding: 1rem;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        
-        .pesan-section {
-            display: none;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.5s ease;
-        }
-
-        .pesan-section.show {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .pesan-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .pesan-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(8px);
-            border-radius: 20px;
-            padding: 1.5rem;
-            transition: transform 0.2s;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .pesan-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.1);
-        }
-
-        .pesan-card .nama {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #3b82f6;
-            margin-bottom: 0.5rem;
-        }
-
-        .pesan-card .pesan {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            color: #e2e8f0;
-        }
-
-        .counter {
-            background: #1e293b;
-            border-radius: 60px;
-            padding: 0.3rem 1rem;
-            display: inline-block;
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            margin-top: 2rem;
-            font-size: 0.85rem;
-            color: #94a3b8;
-        }
-
-        footer a {
-            color: #3b82f6;
-            text-decoration: none;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #3b82f6;
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            opacity: 0;
-            transition: 0.2s;
-            z-index: 99;
-            cursor: pointer;
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .section-title { font-size: 1.4rem; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0f172a; color: #f1f5f9; line-height: 1.5; scroll-behavior: smooth; }
+        .bg-wrapper { background-image: url('https://i.ibb.co.com/WvmZmkgj/View-Inside-Large-Server-Room-Wall-Mural.jpg'); background-size: cover; background-position: center; background-attachment: fixed; }
+        .overlay { background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(2px); }
+        .navbar { position: sticky; top: 0; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); padding: 1rem 2rem; display: flex; justify-content: center; gap: 2.5rem; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; }
+        .navbar a { color: #f1f5f9; text-decoration: none; font-weight: 500; transition: 0.2s; font-size: 0.95rem; cursor: pointer; }
+        .navbar a:hover { color: #3b82f6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .hero { text-align: center; padding: 4rem 1rem 3rem; }
+        .hero h1 { font-family: 'Poppins', sans-serif; font-size: 2.8rem; font-weight: 700; background: linear-gradient(135deg, #ffffff, #94a3b8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .hero .badge { display: inline-block; background: rgba(59,130,246,0.2); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.85rem; margin: 1rem 0; border: 1px solid rgba(59,130,246,0.5); }
+        .btn-group { margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 0.7rem 1.5rem; border-radius: 40px; text-decoration: none; font-weight: 600; transition: 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; border: none; font-size: 1rem; background: #3b82f6; color: white; }
+        .btn:hover { background: #2563eb; transform: translateY(-2px); }
+        .section { margin: 3rem 0; }
+        .section-title { font-size: 1.8rem; font-weight: 600; margin-bottom: 1.5rem; border-left: 5px solid #3b82f6; padding-left: 1rem; }
+        .card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(8px); border-radius: 20px; overflow: hidden; transition: transform 0.2s; border: 1px solid rgba(255,255,255,0.1); }
+        .card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.1); }
+        .card img { width: 100%; height: auto; object-fit: cover; }
+        .card p { padding: 1rem; text-align: center; font-weight: 500; }
+        .gallery-grid, .pesan-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+        .pesan-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(8px); border-radius: 20px; padding: 1.5rem; transition: transform 0.2s; border: 1px solid rgba(255,255,255,0.1); }
+        .pesan-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.1); }
+        .pesan-card .nama { font-weight: 700; font-size: 1.2rem; color: #3b82f6; margin-bottom: 0.5rem; }
+        .pesan-card .pesan { font-size: 0.95rem; line-height: 1.5; color: #e2e8f0; }
+        .counter { background: #1e293b; border-radius: 60px; padding: 0.3rem 1rem; display: inline-block; font-size: 0.85rem; margin-bottom: 1rem; }
+        .hidden-section { display: none; opacity: 0; transform: translateY(30px); transition: all 0.5s ease; }
+        .hidden-section.show { display: block; opacity: 1; transform: translateY(0); }
+        footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2rem; font-size: 0.85rem; color: #94a3b8; }
+        footer a { color: #3b82f6; text-decoration: none; }
+        .back-to-top { position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; opacity: 0; transition: 0.2s; z-index: 99; cursor: pointer; }
+        .back-to-top.show { opacity: 1; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .section-title { font-size: 1.4rem; } }
     </style>
 </head>
 <body>
 <div class="bg-wrapper">
     <div class="overlay">
         <div class="navbar">
-            <a onclick="scrollToHome()">Beranda</a>
-            <a onclick="showPesanAndScroll()">Pesan</a>
+            <a onclick="showSection('beranda')">Beranda</a>
+            <a onclick="showSection('galeri')">Galeri</a>
+            <a onclick="showSection('pesan')">Pesan</a>
+            <a onclick="showSection('video')">Video</a>
         </div>
 
-        <div class="container" id="home">
+        <div class="container">
             
-            <div class="hero">
-                <h1>SMKN 2 KOTA KOMBA</h1>
-                <div class="badge">TKJ Angkatan 2026 — Timeless</div>
-                <p style="max-width: 600px; margin: 1rem auto;">Tiga tahun perjalanan, ribuan kenangan. Terima kasih untuk setiap cerita yang terukir.</p>
-                <div class="btn-group">
-                    <button onclick="showPesanAndScroll()" class="btn btn-primary"><i class="fas fa-comment-dots"></i> Lihat Pesan</button>
+            <div id="beranda">
+                <div class="hero">
+                    <h1>SMKN 2 KOTA KOMBA</h1>
+                    <div class="badge">TKJ Angkatan 2026 — Timeless</div>
+                    <p style="max-width: 600px; margin: 1rem auto;">Tiga tahun perjalanan, ribuan kenangan. Terima kasih untuk setiap cerita yang terukir.</p>
+                    <div class="btn-group">
+                        <button onclick="showSection('galeri')" class="btn"><i class="fas fa-images"></i> Lihat Galeri</button>
+                        <button onclick="showSection('pesan')" class="btn"><i class="fas fa-comment-dots"></i> Lihat Pesan</button>
+                    </div>
                 </div>
-            </div>
-
-            
-            <div class="section" id="galeri">
-                <div class="section-title"><i class="fas fa-camera"></i> Galeri Kenangan</div>
-                <div style="display: flex; justify-content: center;">
-                    <div class="card" style="max-width: 450px;">
-                        <img src="https://thumbs4.imagebam.com/43/eb/aa/ME1C66PG_t.jpg" alt="Foto Angkatan SMKN 2 Kota Komba - TKJ 2026">
-                        <p>Foto Angkatan SMKN 2 Kota Komba - TKJ 2026</p>
+                
+                <div class="section">
+                    <div class="section-title"><i class="fas fa-camera"></i> Foto Angkatan</div>
+                    <div style="display: flex; justify-content: center;">
+                        <div class="card" style="max-width: 450px;">
+                            <img src="https://thumbs4.imagebam.com/43/eb/aa/ME1C66PG_t.jpg" alt="Foto Angkatan SMKN 2 Kota Komba - TKJ 2026">
+                            <p>Foto Angkatan SMKN 2 Kota Komba - TKJ 2026</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
             
-            <div class="pesan-section" id="pesanSection">
-                <div class="section-title"><i class="fas fa-users"></i> Pesan & Kesan</div>
-                <div class="counter"><i class="fas fa-envelope"></i> 11 pesan dari keluarga besar TKJ 2026</div>
-                <div class="pesan-grid">
-                    <div class="pesan-card"><div class="nama">Helena</div><div class="pesan">"Makasih udah jadi teman seperjuangan dari MOS sampe detik-detik ujian. Tetap jadi versi terbaik kalian di mana pun nanti. Jangan lupa angkatan 2026 pernah sekelas, senasib, seatap, dan yang paling kompak. Capek, ketawa, panik bareng. Gak nyesel kenal kalian. Makasih udah bikin masa SMK nggak hambar. Semoga jalan kita ketemu lagi di versi yang lebih keren."</div></div>
-                    <div class="pesan-card"><div class="nama">FRIDO</div><div class="pesan">"Jaga diri kalian baik baik dan jangan pantang menyerahnya ingat kita gen z gen percobaan dan mencoba untuk sukses."</div></div>
-                    <div class="pesan-card"><div class="nama">Aurelia</div><div class="pesan">"Kesan: ngga kerasa udah 3 tahun bareng sama teman-teman semua, senang, sedih, susah, udah kita nikmati bareng walaupun kadang ngga mudah dan banyak rintangannya tapi bersyukur banget bisa bertemu kalian semua. Pesan: semoga cita-cita kita semua dapat menjadi kenyataan. Intinya kita bisa sukses kedepannya, tetap semangat. Have a nice day and God bless u all."</div></div>
-                    <div class="pesan-card"><div class="nama">Tovianus</div><div class="pesan">"Semoga tetap sukses."</div></div>
-                    <div class="pesan-card"><div class="nama">Maria Yasinta</div><div class="pesan">"Janganlah berhenti disini, teruslah melangkah ke jenjang yang lebih tinggi dan menggapai cita-cita atau impian kita masing-masing. Tetaplah sehat dan sukses teman-teman semuanya."</div></div>
-                    <div class="pesan-card"><div class="nama">Marselina</div><div class="pesan">"Sukses selalu untuk kedepannya, jangan lupa asal kita dari SMKN 2 KOKOM, cape tapi seru bangga bisa satu angkatan dengan kalian semua."</div></div>
-                    <div class="pesan-card"><div class="nama">ELYSABET</div><div class="pesan">"Very educated, see you next time."</div></div>
-                    <div class="pesan-card"><div class="nama">Fransiska</div><div class="pesan">"Kalian semua adalah teman-teman yang luar biasa! Semoga kita semua sukses dan tetap terhubung ya!"</div></div>
-                    <div class="pesan-card"><div class="nama">CRESENSIANA</div><div class="pesan">"Semoga teman-teman sehat selalu dan selalu dilindungi oleh Tuhan."</div></div>
-                    <div class="pesan-card"><div class="nama">Maria Dewi</div><div class="pesan">"Sangat senang dan bahagia."</div></div>
-                    <div class="pesan-card"><div class="nama">Rivaldi</div><div class="pesan">"Terima kasih teman-teman untuk semua pesan dan kenangan indah. Jangan lupa simpan link website ini, suatu saat nanti kalian bisa balik lagi untuk bernostalgia. Terima kasih banyak untuk kalian yang sudah berkontribusi, kalian luar biasa! 🙌"</div></div>
+            <div id="galeri" class="hidden-section">
+                <div class="section">
+                    <div class="section-title"><i class="fas fa-images"></i> Galeri Kenangan</div>
+                    <div class="gallery-grid">
+                        <div class="card"><img src="https://i.ibb.co.com/V0gYKCJh/IMG-20260204-214030.jpg" alt="Kenangan 1"><p>Momen kebersamaan</p></div>
+                        <div class="card"><img src="https://i.ibb.co.com/kgcVXBN2/expansion-20250430112933766.jpg" alt="Kenangan 2"><p>Momen kebersamaan</p></div>
+                        <div class="card"><img src="https://i.ibb.co.com/7tVXqqq5/IMG-20260409-WA0038.jpg" alt="Kenangan 3"><p>Momen kebersamaan</p></div>
+                        <div class="card"><img src="https://i.ibb.co.com/pvFk2Fwb/IMG-20260207-WA0015.jpg" alt="Kenangan 4"><p>Momen kebersamaan</p></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="pesan" class="hidden-section">
+                <div class="section">
+                    <div class="section-title"><i class="fas fa-users"></i> Pesan & Kesan</div>
+                    <div class="counter"><i class="fas fa-envelope"></i> 11 pesan dari keluarga besar TKJ 2026</div>
+                    <div class="pesan-grid">
+                        <div class="pesan-card"><div class="nama">Helena</div><div class="pesan">"Makasih udah jadi teman seperjuangan dari MOS sampe detik-detik ujian. Tetap jadi versi terbaik kalian di mana pun nanti. Jangan lupa angkatan 2026 pernah sekelas, senasib, seatap, dan yang paling kompak. Capek, ketawa, panik bareng. Gak nyesel kenal kalian. Makasih udah bikin masa SMK nggak hambar. Semoga jalan kita ketemu lagi di versi yang lebih keren."</div></div>
+                        <div class="pesan-card"><div class="nama">FRIDO</div><div class="pesan">"Jaga diri kalian baik baik dan jangan pantang menyerahnya ingat kita gen z gen percobaan dan mencoba untuk sukses."</div></div>
+                        <div class="pesan-card"><div class="nama">Aurelia</div><div class="pesan">"Kesan: ngga kerasa udah 3 tahun bareng sama teman-teman semua, senang, sedih, susah, udah kita nikmati bareng walaupun kadang ngga mudah dan banyak rintangannya tapi bersyukur banget bisa bertemu kalian semua. Pesan: semoga cita-cita kita semua dapat menjadi kenyataan. Intinya kita bisa sukses kedepannya, tetap semangat. Have a nice day and God bless u all."</div></div>
+                        <div class="pesan-card"><div class="nama">Tovianus</div><div class="pesan">"Semoga tetap sukses."</div></div>
+                        <div class="pesan-card"><div class="nama">Maria Yasinta</div><div class="pesan">"Janganlah berhenti disini, teruslah melangkah ke jenjang yang lebih tinggi dan menggapai cita-cita atau impian kita masing-masing. Tetaplah sehat dan sukses teman-teman semuanya."</div></div>
+                        <div class="pesan-card"><div class="nama">Marselina</div><div class="pesan">"Sukses selalu untuk kedepannya, jangan lupa asal kita dari SMKN 2 KOKOM, cape tapi seru bangga bisa satu angkatan dengan kalian semua."</div></div>
+                        <div class="pesan-card"><div class="nama">ELYSABET</div><div class="pesan">"Very educated, see you next time."</div></div>
+                        <div class="pesan-card"><div class="nama">Fransiska</div><div class="pesan">"Kalian semua adalah teman-teman yang luar biasa! Semoga kita semua sukses dan tetap terhubung ya!"</div></div>
+                        <div class="pesan-card"><div class="nama">CRESENSIANA</div><div class="pesan">"Semoga teman-teman sehat selalu dan selalu dilindungi oleh Tuhan."</div></div>
+                        <div class="pesan-card"><div class="nama">Maria Dewi</div><div class="pesan">"Sangat senang dan bahagia."</div></div>
+                        <div class="pesan-card"><div class="nama">Rivaldi</div><div class="pesan">"Terima kasih teman-teman untuk semua pesan dan kenangan indah. Jangan lupa simpan link website ini, suatu saat nanti kalian bisa balik lagi untuk bernostalgia. Terima kasih banyak untuk kalian yang sudah berkontribusi, kalian luar biasa! 🙌"</div></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="video" class="hidden-section">
+                <div class="section">
+                    <div class="section-title"><i class="fas fa-video"></i> Video Kenangan</div>
+                    <div style="display: flex; justify-content: center;">
+                        <a href="https://youtube.com/shorts/96rq6_KNSQ8" target="_blank" class="card" style="max-width: 450px; text-decoration: none;">
+                            <img src="https://img.youtube.com/vi/96rq6_KNSQ8/maxresdefault.jpg" 
+                                 alt="Video Kenangan Angkatan 2026"
+                                 onerror="this.src='https://img.youtube.com/vi/96rq6_KNSQ8/hqdefault.jpg'">
+                            <p>🎬 Video Kenangan - Klik untuk menonton</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        
         <footer>
             <p><i class="fas fa-envelope"></i> <a href="mailto:rivaldihormat@gmail.com">rivaldihormat@gmail.com</a></p>
             <p style="margin-top: 1rem;">&copy; 2026 — SMKN 2 KOTA KOMBA | TKJ Angkatan 2026</p>
             <p style="margin-top: 0.5rem; font-size: 0.7rem;">Dibuat oleh Rivaldi — Kreator website angkatan</p>
         </footer>
 
-        <div class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <div class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">
             <i class="fas fa-arrow-up"></i>
         </div>
     </div>
 </div>
 
 <script>
-    const pesanSection = document.getElementById('pesanSection');
-    const backBtn = document.getElementById('backToTop');
-
-    
-    function showPesan() {
-        if (!pesanSection.classList.contains('show')) {
-            pesanSection.classList.add('show');
+    function showSection(sectionId) {
+        
+        const sections = ['beranda', 'galeri', 'pesan', 'video'];
+        sections.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                if (id === 'beranda') {
+                    el.style.display = 'block';
+                } else {
+                    el.classList.remove('show');
+                }
+            }
+        });
+        
+        
+        if (sectionId === 'beranda') {
+            const beranda = document.getElementById('beranda');
+            beranda.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.classList.add('show');
+                setTimeout(() => {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
         }
     }
 
     
-    function showPesanAndScroll() {
-        showPesan();
-        setTimeout(() => {
-            pesanSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
-    }
-
-    
-    function scrollToHome() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    
+    const backBtn = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
             backBtn.classList.add('show');
