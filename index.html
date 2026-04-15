@@ -45,9 +45,62 @@
         .hidden-section { display: none; opacity: 0; transform: translateY(30px); transition: all 0.5s ease; }
         .hidden-section.show { display: block; opacity: 1; transform: translateY(0); }
         footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2rem; font-size: 0.85rem; color: #94a3b8; }
-        .back-to-top { position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; opacity: 0; transition: 0.2s; z-index: 99; cursor: pointer; }
+        
+        /* Tombol Musik */
+        .music-btn {
+            position: fixed;
+            bottom: 5rem;
+            right: 1.5rem;
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            z-index: 99;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.2s;
+            border: none;
+            backdrop-filter: blur(4px);
+        }
+        .music-btn:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #2563eb, #1e3a8a);
+            box-shadow: 0 6px 20px rgba(59,130,246,0.4);
+        }
+        .music-btn i {
+            font-size: 1.1rem;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background: #3b82f6;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: 0.2s;
+            z-index: 99;
+            cursor: pointer;
+        }
         .back-to-top.show { opacity: 1; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .section-title { font-size: 1.4rem; } }
+        
+        @media (max-width: 768px) { 
+            .hero h1 { font-size: 2rem; } 
+            .section-title { font-size: 1.4rem; }
+            .music-btn { padding: 0.5rem 1rem; font-size: 0.75rem; bottom: 4.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -72,7 +125,7 @@
                     </div>
                 </div>
 
-        
+            
                 <div class="section">
                     <div class="section-title"><i class="fas fa-camera"></i> Foto Angkatan</div>
                     <div style="display: flex; justify-content: center;">
@@ -132,19 +185,27 @@
             </div>
         </div>
 
-        
         <footer>
             <p>&copy; 2026 — SMKN 2 KOTA KOMBA | TKJ Angkatan 2026</p>
             <p style="margin-top: 0.5rem; font-size: 0.7rem;">Dibuat oleh Rivaldi — Kreator website angkatan</p>
         </footer>
 
+        
         <div class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">
             <i class="fas fa-arrow-up"></i>
         </div>
+
+        
+        <div class="music-btn" id="musicBtn">
+            <i class="fas fa-music"></i> 
+            <span id="musicText">🎵 Klik untuk nuansa lebih hangat</span>
+        </div>
+        <audio id="backsound" src="https://files.catbox.moe/jfv2s8.mp3" loop></audio>
     </div>
 </div>
 
 <script>
+    
     function showSection(sectionId) {
         const sections = ['beranda', 'pesan', 'video'];
         sections.forEach(id => {
@@ -173,12 +234,33 @@
         }
     }
 
+    
     const backBtn = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
             backBtn.classList.add('show');
         } else {
             backBtn.classList.remove('show');
+        }
+    });
+
+    
+    const musicBtn = document.getElementById('musicBtn');
+    const musicText = document.getElementById('musicText');
+    const audio = document.getElementById('backsound');
+    let isPlaying = false;
+
+    musicBtn.addEventListener('click', () => {
+        if (isPlaying) {
+            audio.pause();
+            musicText.innerHTML = '🎵 BTW nihh ada musiknya juga';
+            musicBtn.style.background = "linear-gradient(135deg, #3b82f6, #1e40af)";
+            isPlaying = false;
+        } else {
+            audio.play();
+            musicText.innerHTML = '⏸️ Klik untuk hentikan musik';
+            musicBtn.style.background = "linear-gradient(135deg, #10b981, #047857)";
+            isPlaying = true;
         }
     });
 </script>
