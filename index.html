@@ -36,21 +36,16 @@
         .video-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.1); }
         .video-card iframe { width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; border: none; }
         .video-card p { padding: 0.75rem 0 0 0; text-align: center; font-weight: 500; }
-        
-        
         .nama-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem; }
         .nama-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(8px); border-radius: 15px; padding: 0.8rem 1rem; transition: transform 0.2s; border: 1px solid rgba(255,255,255,0.1); text-align: center; }
         .nama-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.1); }
         .nama-card .nama { font-weight: 600; font-size: 0.95rem; color: #e2e8f0; }
-        
-        
         .pesan-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
         .pesan-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(8px); border-radius: 20px; padding: 1.5rem; transition: transform 0.2s; border: 1px solid rgba(255,255,255,0.1); }
         .pesan-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.1); }
         .pesan-card .nama { font-weight: 700; font-size: 1.2rem; color: #3b82f6; margin-bottom: 0.5rem; }
         .pesan-card .pesan { font-size: 0.95rem; line-height: 1.5; color: #e2e8f0; font-style: italic; }
         .counter { background: #1e293b; border-radius: 60px; padding: 0.3rem 1rem; display: inline-block; font-size: 0.85rem; margin-bottom: 1rem; }
-        
         .hidden-section { display: none; opacity: 0; transform: translateY(30px); transition: all 0.5s ease; }
         .hidden-section.show { display: block; opacity: 1; transform: translateY(0); }
         footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2rem; font-size: 0.85rem; color: #94a3b8; }
@@ -83,8 +78,6 @@
                         <button onclick="showSection('video')" class="btn"><i class="fas fa-video"></i> Lihat Video</button>
                     </div>
                 </div>
-
-                
                 <div class="section">
                     <div class="section-title"><i class="fas fa-camera"></i> Foto Angkatan</div>
                     <div style="display: flex; justify-content: center;">
@@ -94,8 +87,6 @@
                         </div>
                     </div>
                 </div>
-
-                
                 <div class="section">
                     <div class="section-title"><i class="fas fa-heart"></i> Ucapan Terima Kasih</div>
                     <div class="thankyou-card">
@@ -187,7 +178,7 @@
                 </div>
             </div>
 
-              
+            
             <div id="video" class="hidden-section">
                 <div class="section">
                     <div class="section-title"><i class="fas fa-video"></i> Video Kenangan</div>
@@ -211,7 +202,7 @@
         
         <div class="music-btn" id="musicBtn">
             <i class="fas fa-music"></i> 
-            <span id="musicText">🎵 nih ada musik juga</span>
+            <span id="musicText">nih ada musiknya juga</span>
         </div>
         <audio id="backsound" src="https://files.catbox.moe/jfv2s8.mp3" loop></audio>
 
@@ -250,7 +241,6 @@
         }
     }
 
-    
     const backBtn = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
@@ -268,7 +258,7 @@
     musicBtn.addEventListener('click', () => {
         if (isPlaying) {
             audio.pause();
-            musicText.innerHTML = '🎵 nih ada musik juga';
+            musicText.innerHTML = 'nih ada musiknya juga';
             musicBtn.style.background = "linear-gradient(135deg, #3b82f6, #1e40af)";
             isPlaying = false;
         } else {
@@ -281,5 +271,3 @@
 </script>
 </body>
 </html>
-
-            
