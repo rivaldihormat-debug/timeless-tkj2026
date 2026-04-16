@@ -49,11 +49,56 @@
         .hidden-section { display: none; opacity: 0; transform: translateY(30px); transition: all 0.5s ease; }
         .hidden-section.show { display: block; opacity: 1; transform: translateY(0); }
         footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2rem; font-size: 0.85rem; color: #94a3b8; }
-        .music-btn { position: fixed; bottom: 5rem; right: 1.5rem; background: linear-gradient(135deg, #3b82f6, #1e40af); color: white; padding: 0.8rem 1.2rem; border-radius: 50px; display: flex; align-items: center; gap: 0.5rem; cursor: pointer; z-index: 99; font-size: 0.85rem; font-weight: 500; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: all 0.2s; border: none; backdrop-filter: blur(4px); }
-        .music-btn:hover { transform: scale(1.05); background: linear-gradient(135deg, #2563eb, #1e3a8a); }
-        .back-to-top { position: fixed; bottom: 1.5rem; right: 1.5rem; background: #3b82f6; color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; opacity: 0; transition: 0.2s; z-index: 99; cursor: pointer; }
+        
+        .music-btn {
+            position: fixed;
+            bottom: 5rem;
+            right: 1.5rem;
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            z-index: 99;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.2s;
+            border: none;
+            backdrop-filter: blur(4px);
+        }
+        .music-btn:hover { transform: scale(1.05); }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background: #3b82f6;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: 0.2s;
+            z-index: 99;
+            cursor: pointer;
+        }
         .back-to-top.show { opacity: 1; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .section-title { font-size: 1.4rem; } .navbar { gap: 1rem; } .navbar a { font-size: 0.8rem; } }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.4rem; }
+            .navbar { gap: 1rem; }
+            .navbar a { font-size: 0.8rem; }
+            .music-btn { padding: 0.5rem 1rem; font-size: 0.75rem; bottom: 4.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -67,7 +112,7 @@
         </div>
 
         <div class="container">
-            
+            <!-- BERANDA -->
             <div id="beranda">
                 <div class="hero">
                     <h1>SMKN 2 KOTA KOMBA</h1>
@@ -98,7 +143,7 @@
                 </div>
             </div>
 
-            
+            <!-- NAMA ANGKATAN (30 NAMA) -->
             <div id="namaangkatan" class="hidden-section">
                 <div class="section">
                     <div class="section-title"><i class="fas fa-users"></i> Nama Angkatan 2026</div>
@@ -138,47 +183,28 @@
                 </div>
             </div>
 
-            
+            <!-- PESAN (HANYA YANG PUNYA PESAN - 11 ORANG) -->
             <div id="pesan" class="hidden-section">
                 <div class="section">
                     <div class="section-title"><i class="fas fa-comment-dots"></i> Pesan & Kesan</div>
-                    <div class="counter"><i class="fas fa-envelope"></i> 30 anggota TKJ 2026</div>
+                    <div class="counter"><i class="fas fa-envelope"></i> 11 pesan dari keluarga besar TKJ 2026</div>
                     <div class="pesan-grid">
-                        <div class="pesan-card"><div class="nama">Anjelus Arianto</div><div class="pesan">Belum mengisi pesan</div></div>
                         <div class="pesan-card"><div class="nama">Aurelia Elfrida Kontesa</div><div class="pesan">"Kesan: ngga kerasa udah 3 tahun bareng sama teman-teman semua, senang, sedih, susah, udah kita nikmati bareng walaupun kadang ngga mudah dan banyak rintangannya tapi bersyukur banget bisa bertemu kalian semua. Pesan: semoga cita-cita kita semua dapat menjadi kenyataan. Intinya kita bisa sukses kedepannya, tetap semangat. Have a nice day and God bless u all."</div></div>
                         <div class="pesan-card"><div class="nama">Cresensia E. Jaino</div><div class="pesan">"Semoga teman-teman sehat selalu dan selalu dilindungi oleh Tuhan."</div></div>
-                        <div class="pesan-card"><div class="nama">Dionisius Harapan</div><div class="pesan">Belum mengisi pesan</div></div>
                         <div class="pesan-card"><div class="nama">Elisabet G. Hormat</div><div class="pesan">"Very educated, see you next time."</div></div>
-                        <div class="pesan-card"><div class="nama">Emilia D. F. Ndau</div><div class="pesan">Belum mengisi pesan</div></div>
                         <div class="pesan-card"><div class="nama">Fransiska H. Goban</div><div class="pesan">"Kalian semua adalah teman-teman yang luar biasa! Semoga kita semua sukses dan tetap terhubung ya!"</div></div>
                         <div class="pesan-card"><div class="nama">Fridoberesman Sairam</div><div class="pesan">"Jaga diri kalian baik baik dan jangan pantang menyerahnya ingat kita gen z gen percobaan dan mencoba untuk sukses."</div></div>
-                        <div class="pesan-card"><div class="nama">Gaudensia Yutriana</div><div class="pesan">Belum mengisi pesan</div></div>
-                        <div class="pesan-card"><div class="nama">Grenfianus Mun</div><div class="pesan">Belum mengisi pesan</div></div>
                         <div class="pesan-card"><div class="nama">Helena E. Budian</div><div class="pesan">"Makasih udah jadi teman seperjuangan dari MOS sampe detik-detik ujian. Tetap jadi versi terbaik kalian di mana pun nanti. Jangan lupa angkatan 2026 pernah sekelas, senasib, seatap, dan yang paling kompak. Capek, ketawa, panik bareng. Gak nyesel kenal kalian. Makasih udah bikin masa SMK nggak hambar. Semoga jalan kita ketemu lagi di versi yang lebih keren."</div></div>
-                        <div class="pesan-card"><div class="nama">Irawati Jaya</div><div class="pesan">Belum mengisi pesan</div></div>
-                        <div class="pesan-card"><div class="nama">Januarius A. Glen</div><div class="pesan">Belum mengisi pesan</div></div>
-                        <div class="pesan-card"><div class="nama">Julia Osada</div><div class="pesan">Belum mengisi pesan</div></div>
-                        <div class="pesan-card"><div class="nama">Karolina Septiani</div><div class="pesan">Belum mengisi pesan</div></div>
                         <div class="pesan-card"><div class="nama">Kontantinus R. Hormat</div><div class="pesan">"Terima kasih teman-teman untuk semua pesan dan kenangan indah. Jangan lupa simpan link website ini, suatu saat nanti kalian bisa balik lagi untuk bernostalgia. Terima kasih banyak untuk kalian yang sudah berkontribusi, kalian luar biasa! 🙌"</div></div>
-                        <div class="pesan-card"><div class="nama">Leonardo A. Sima</div><div class="pesan">Belum mengisi pesan</div></div>
-                        <div class="pesan-card"><div class="nama">Maria A. Landang</div><div class="pesan">Belum mengisi pesan</div></div>
-                        <div class="pesan-card"><div class="nama">Maria C. A. N. Mamo</div><div class="pesan">Belum mengisi pesan</div></div>
                         <div class="pesan-card"><div class="nama">Maria D. Satri</div><div class="pesan">"Sangat senang dan bahagia."</div></div>
                         <div class="pesan-card"><div class="nama">Maria Yasinta Mulia</div><div class="pesan">"Janganlah berhenti disini, teruslah melangkah ke jenjang yang lebih tinggi dan menggapai cita-cita atau impian kita masing-masing. Tetaplah sehat dan sukses teman-teman semuanya."</div></div>
-                        <div class="pesan-card"><div class="nama">Mariano Julio</div><div class="pesan">Belum mengisi pesan</div></div>
                         <div class="pesan-card"><div class="nama">Marselina A. Devin</div><div class="pesan">"Sukses selalu untuk kedepannya, jangan lupa asal kita dari SMKN 2 KOKOM, cape tapi seru bangga bisa satu angkatan dengan kalian semua."</div></div>
-                        <div class="pesan-card"><div class="nama">Oktaviani K. Pili</div><div class="pesan">Belum mengisi pesan</div></div>
-                        <div class="pesan-card"><div class="nama">Paulus R. Dalen</div><div class="pesan">Belum mengisi pesan</div></div>
-                        <div class="pesan-card"><div class="nama">Petrolia E. Jenau</div><div class="pesan">Belum mengisi pesan</div></div>
-                        <div class="pesan-card"><div class="nama">Safronius Anggal</div><div class="pesan">Belum mengisi pesan</div></div>
                         <div class="pesan-card"><div class="nama">Tovianus Babut</div><div class="pesan">"Semoga tetap sukses."</div></div>
-                        <div class="pesan-card"><div class="nama">Yohanes E. Ipin</div><div class="pesan">Belum mengisi pesan</div></div>
-                        <div class="pesan-card"><div class="nama">Petronal Murianto</div><div class="pesan">Belum mengisi pesan</div></div>
                     </div>
                 </div>
             </div>
 
-            
+            <!-- VIDEO (5 VIDEO) -->
             <div id="video" class="hidden-section">
                 <div class="section">
                     <div class="section-title"><i class="fas fa-video"></i> Video Kenangan</div>
@@ -199,8 +225,8 @@
             <p style="margin-top: 0.5rem; font-size: 0.7rem;">Dibuat oleh Rivaldi — Kreator website angkatan</p>
         </footer>
 
-        
-        <div class="music-btn" id="musicBtn">
+        <!-- TOMBOL MUSIK -->
+             <div class="music-btn" id="musicBtn" onclick="toggleMusic()">
             <i class="fas fa-music"></i> 
             <span id="musicText">nih ada musiknya juga</span>
         </div>
@@ -250,24 +276,22 @@
         }
     });
 
-    
-    const musicBtn = document.getElementById('musicBtn');
-    const musicText = document.getElementById('musicText');
-    const audio = document.getElementById('backsound');
-    let isPlaying = false;
-    musicBtn.addEventListener('click', () => {
-        if (isPlaying) {
-            audio.pause();
-            musicText.innerHTML = 'nih ada musiknya juga';
-            musicBtn.style.background = "linear-gradient(135deg, #3b82f6, #1e40af)";
-            isPlaying = false;
+    // Fungsi musik
+    function toggleMusic() {
+        var audio = document.getElementById('backsound');
+        var btn = document.getElementById('musicBtn');
+        var text = document.getElementById('musicText');
+        
+        if (audio.paused) {
+            audio.play().catch(e => console.log('Error:', e));
+            text.innerHTML = '🫶🏻🫶🏻🫶🏻';
+            btn.style.background = "linear-gradient(135deg, #10b981, #047857)";
         } else {
-            audio.play();
-            musicText.innerHTML = '🫶🏻🫶🏻🫶🏻';
-            musicBtn.style.background = "linear-gradient(135deg, #10b981, #047857)";
-            isPlaying = true;
+            audio.pause();
+            text.innerHTML = 'nih ada musiknya juga';
+            btn.style.background = "linear-gradient(135deg, #3b82f6, #1e40af)";
         }
-    });
+    }
 </script>
 </body>
 </html>
